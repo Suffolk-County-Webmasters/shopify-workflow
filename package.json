@@ -4,7 +4,7 @@
   "description": "Template for working locally with Shopify themes.",
   "main": "src/js/index.js",
   "scripts": {
-    "start": "npm run watch",
+    "start": "npm run production && npm run watch",
     "dev": "cross-env NODE_ENV=development webpack --mode development --progress --hide-modules --config=webpack.config.js",
     "prod": "cross-env NODE_ENV=production webpack --mode production --no-progress --hide-modules --config=webpack.config.js",
     "watch-files": "cross-env NODE_ENV=development webpack --mode production --watch --progress --hide-modules --config=webpack.config.js",
