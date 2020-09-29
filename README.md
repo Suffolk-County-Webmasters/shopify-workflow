@@ -3,8 +3,40 @@ Template workflow for working locally with Shopify themes.
 
 ## How to Use
 Sucoweb Shopify Workflow depends upon Shopify's Themekit. Install on Windows using `choco install themekit`.
+1. Configure your Shopify store to allow editing themes.
+2. Put the store and theme details in `config.yml`, with the same fields as `example.config.yml`.
+   - Fill in `store`, `password`, and `theme_id`. The default `directory` is `build`.
+3. Run the command `theme get` to download theme files into `directory` as set in `config.yml`.
+4. Run `npm start` to start developing and pushing changes live to the server!
 
+## Directory Structure
+```bash
+project
+├───build # Theme files go here, to be updated live
+│   ├───assets
+│   ├───config
+│   ├───layout
+│   ├───locales
+│   ├───sections
+│   ├───snippets
+│   └───templates
+└───src # Resources here, compiled to /build
+   ├───js
+   └───scss
+```
+
+## Commands
+- `start`: alias to `watch`.
+- `dev`: uses webpack to compile assets in development mode.
+- `prod`: uses webpack to compile assets in production mode.
+- `watch-files`: uses webpack to watch changes in `src` and recompile.
+- `watch-theme`: uses themekit to watch for changes in `build` and upload to Shopify.
+- `production`: uses webpack to compile assets for production and themekit to upload to Shopify.
+- `development`: uses webpack to compile assets for development and themekit to upload to Shopify.
+- `pull`: uses Themekit to pull theme from Shopify.
+- `push`: uses Themekit to push files to Shopify.
+- `watch`: Runs `watch-files` and `watch-theme` simultaneously, to instantly compile and push code changes to Shopify.
 
 
 ## Credit
-Forked from [https://github.com/Youfront/shopify-development-boilerplate]
+- Webpack config from [https://github.com/Youfront/shopify-development-boilerplate]
