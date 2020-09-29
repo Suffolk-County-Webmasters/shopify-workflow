@@ -5,11 +5,3 @@ development: # Default
     store: my-store.myshopify.com
     directory: build # Keep This
     ignore_files: settings_data.json
-
-# Production environment
-production:
-    password: 
-    theme_id: 
-    store: my-shop.myshopify.com
-    directory: src # Keep this
-    ignore_files: settings_data.json
